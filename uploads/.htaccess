@@ -1,0 +1,10 @@
+# Prevent execution of any scripts in uploads
+<IfModule mod_php7.c>
+  <FilesMatch ".*\.(php|php5|phtml)$">
+    Deny from all
+  </FilesMatch>
+</IfModule>
+# If using other handlers
+<FilesMatch ".*\.(php|php5|phtml)$">
+  Require all denied
+</FilesMatch>
