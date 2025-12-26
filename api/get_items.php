@@ -1,5 +1,5 @@
 <?php
-// Public API: return JSON list of events or news
+// Public API: return JSON list of events, news, or images
 header('Content-Type: application/json; charset=utf-8');
 require_once __DIR__ . '/../db.php';
 $type = $_GET['type'] ?? 'all';
@@ -24,5 +24,14 @@ if ($type === 'news' || $type === 'all') {
 } else {
     $news = [];
 }
-echo json_encode(['events' => $events, 'news' => $news], JSON_UNESCAPED_UNICODE);
+if ($type === 'images') {
+    $stmt = $pdo->query('SELECT i.id, i.title, i.filename, i.description, i.created_at, u.username FROM images i LEFT JOIN users u ON u.id = i.created_by ORDER BY i.created_at DESC LIMIT 100');
+    $images = $stmt->fetchAll();
+    foreach ($images as &$img) {
+        $img['author'] = $img['username'];
+    }
+} else {
+    $images = [];
+}
+echo json_encode(['events' => $events, 'news' => $news, 'images' => $images], JSON_UNESCAPED_UNICODE);
 ?>

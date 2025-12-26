@@ -19,9 +19,7 @@
         <a href="/evangelische-kirche-drabenderhöhe/pages/neues.php">Neues</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/calendar.php">Kalender</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php">Kontakt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php">Pfarrblatt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Bilder</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/themen.php">Themen</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Galerie</a>
         <a href="/evangelische-kirche-drabenderhöhe/admin/index.php">Admin</a>
       </nav>
     </div>

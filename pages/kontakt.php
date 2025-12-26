@@ -18,46 +18,41 @@
       </div>
       <nav>
         <a href="/evangelische-kirche-drabenderhöhe/">Home</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/neues.php">Neues</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/calendar.php">Kalender</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php">Kontakt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php">Pfarrblatt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Bilder</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/themen.php">Themen</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Galerie</a>
         <a href="/evangelische-kirche-drabenderhöhe/admin/index.php">Admin</a>
       </nav>
     </div>
   </header>
   <main class="container">
     <div class="main-grid">
-      <aside class="info-panel card">
-        <div class="card-body">
-          <h2>Navigation</h2>
-          <ul style="list-style:none;padding:0">
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/" style="color:var(--accent);text-decoration:none">Home</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php" style="color:var(--accent);text-decoration:none">Kontakt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php" style="color:var(--accent);text-decoration:none">Pfarrblatt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/images.php" style="color:var(--accent);text-decoration:none">Bilder</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/themen.php" style="color:var(--accent);text-decoration:none">Themen</a></li>
-          </ul>
-        </div>
-      </aside>
       <section>
         <div class="card">
           <div class="card-body">
             <h2>Kontakt</h2>
-            <p>Hier können Sie uns erreichen:</p>
-            <form style="max-width:500px">
-              <label>Name<br><input type="text" name="name" required></label><br>
-              <label>Email<br><input type="email" name="email" required></label><br>
-              <label>Nachricht<br><textarea name="message" rows="6"></textarea></label><br>
-              <button type="submit">Senden</button>
-            </form>
-            <hr style="border:none;border-top:1px solid rgba(190,49,68,0.3);margin:24px 0">
-            <h3>Adresse</h3>
-            <p>Evangelische Kirche Drabenderhöhe<br>Adresse der Kirche<br>PLZ Ort</p>
-            <h3>Telefon</h3>
-            <p>Telefonnummer hier</p>
-            <h3>Email</h3>
-            <p>kontakt@kirche-drabenderhoehe.de</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+              <div>
+                <h3>Nachricht</h3>
+                <p><em>Kontaktformular in Vorbereitung</em></p>
+              </div>
+              <div>
+                <h3>Kontaktinformation</h3>
+                <div style="margin-bottom:20px">
+                  <h4 style="margin-top:0">Adresse</h4>
+                  <p style="margin:0">Evangelische Kirche Drabenderhöhe<br>Adresse der Kirche<br>PLZ Ort</p>
+                </div>
+                <div style="margin-bottom:20px">
+                  <h4 style="margin-top:0">Telefon</h4>
+                  <p style="margin:0">Telefonnummer hier</p>
+                </div>
+                <div>
+                  <h4 style="margin-top:0">Email</h4>
+                  <p style="margin:0">kontakt@kirche-drabenderhoehe.de</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

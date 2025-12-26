@@ -21,9 +21,7 @@
         <a href="/evangelische-kirche-drabenderhöhe/pages/neues.php">Neues</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/calendar.php">Kalender</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php">Kontakt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php">Pfarrblatt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Bilder</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/themen.php">Themen</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Galerie</a>
         <a href="/evangelische-kirche-drabenderhöhe/admin/index.php">Admin</a>
       </nav>
     </div>
@@ -32,19 +30,14 @@
     <div class="main-grid">
       <aside class="info-panel card">
         <div class="card-body">
-          <h2>Navigation</h2>
-          <ul style="list-style:none;padding:0">
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/" style="color:var(--accent);text-decoration:none">Home</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/neues.php" style="color:var(--accent);text-decoration:none">Neues</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/calendar.php" style="color:var(--accent);text-decoration:none">Kalender</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php" style="color:var(--accent);text-decoration:none">Kontakt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php" style="color:var(--accent);text-decoration:none">Pfarrblatt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/images.php" style="color:var(--accent);text-decoration:none">Bilder</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/themen.php" style="color:var(--accent);text-decoration:none">Themen</a></li>
-          </ul>
-          <hr style="border:none;border-top:1px solid rgba(190,49,68,0.3);margin:12px 0">
+          <h2>Kalender</h2>
           <div id="calendar-widget" class="card" style="border:none;box-shadow:none;margin:0;padding:0">
-            <div id="calendar-content">Lade…</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+              <button onclick="calPrev()" style="padding:4px 8px;font-size:0.9rem">← Vorher</button>
+              <span id="calendar-month" style="font-weight:bold"></span>
+              <button onclick="calNext()" style="padding:4px 8px;font-size:0.9rem">Nächst →</button>
+            </div>
+            <div id="calendar-content" style="font-size:0.85rem">Lade…</div>
           </div>
         </div>
       </aside>

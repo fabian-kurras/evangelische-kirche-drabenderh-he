@@ -21,29 +21,13 @@
         <a href="/evangelische-kirche-drabenderhöhe/pages/neues.php">Neues</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/calendar.php">Kalender</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php">Kontakt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php">Pfarrblatt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Bilder</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/themen.php">Themen</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Galerie</a>
         <a href="/evangelische-kirche-drabenderhöhe/admin/index.php">Admin</a>
       </nav>
     </div>
   </header>
   <main class="container">
     <div class="main-grid">
-      <aside class="info-panel card">
-        <div class="card-body">
-          <h2>Navigation</h2>
-          <ul style="list-style:none;padding:0">
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/" style="color:var(--accent);text-decoration:none">Home</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/neues.php" style="color:var(--accent);text-decoration:none">Neues</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/calendar.php" style="color:var(--accent);text-decoration:none">Kalender</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php" style="color:var(--accent);text-decoration:none">Kontakt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php" style="color:var(--accent);text-decoration:none">Pfarrblatt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/images.php" style="color:var(--accent);text-decoration:none">Bilder</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/themen.php" style="color:var(--accent);text-decoration:none">Themen</a></li>
-          </ul>
-        </div>
-      </aside>
       <section>
         <div class="card">
           <div class="card-body">

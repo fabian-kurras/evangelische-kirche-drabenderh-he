@@ -18,52 +18,73 @@
       </div>
       <nav>
         <a href="/evangelische-kirche-drabenderhöhe/">Home</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/neues.php">Neues</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/calendar.php">Kalender</a>
         <a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php">Kontakt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php">Pfarrblatt</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Bilder</a>
-        <a href="/evangelische-kirche-drabenderhöhe/pages/themen.php">Themen</a>
+        <a href="/evangelische-kirche-drabenderhöhe/pages/images.php">Galerie</a>
         <a href="/evangelische-kirche-drabenderhöhe/admin/index.php">Admin</a>
       </nav>
     </div>
   </header>
   <main class="container">
     <div class="main-grid">
-      <aside class="info-panel card">
-        <div class="card-body">
-          <h2>Navigation</h2>
-          <ul style="list-style:none;padding:0">
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/" style="color:var(--accent);text-decoration:none">Home</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/kontakt.php" style="color:var(--accent);text-decoration:none">Kontakt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/pfarrblatt.php" style="color:var(--accent);text-decoration:none">Pfarrblatt</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/images.php" style="color:var(--accent);text-decoration:none">Bilder</a></li>
-            <li style="margin-bottom:8px"><a href="/evangelische-kirche-drabenderhöhe/pages/themen.php" style="color:var(--accent);text-decoration:none">Themen</a></li>
-          </ul>
-        </div>
-      </aside>
-      <section>
+      <section id="images-section">
         <div class="card">
           <div class="card-body">
             <h2>Bilder</h2>
-            <p>Schauen Sie sich unsere Bilder aus Gemeindeveranstaltungen und vom Gemeindeleben an.</p>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:16px;margin-top:20px">
-              <div style="border:2px solid var(--accent);border-radius:10px;height:200px;background:#3a4750;display:flex;align-items:center;justify-content:center;color:#999">
-                Bildplatzhalter 1
-              </div>
-              <div style="border:2px solid var(--accent);border-radius:10px;height:200px;background:#3a4750;display:flex;align-items:center;justify-content:center;color:#999">
-                Bildplatzhalter 2
-              </div>
-              <div style="border:2px solid var(--accent);border-radius:10px;height:200px;background:#3a4750;display:flex;align-items:center;justify-content:center;color:#999">
-                Bildplatzhalter 3
-              </div>
-              <div style="border:2px solid var(--accent);border-radius:10px;height:200px;background:#3a4750;display:flex;align-items:center;justify-content:center;color:#999">
-                Bildplatzhalter 4
-              </div>
-            </div>
+            <div id="elements-container">Lade…</div>
           </div>
         </div>
       </section>
     </div>
   </main>
-  <script src="/evangelische-kirche-drabenderhöhe/assets/js/main.js"></script>
+  <script>
+    (function(){
+      const container = document.getElementById('elements-container');
+      
+      async function loadImages(){
+        try {
+          const res = await fetch('/evangelische-kirche-drabenderhöhe/api/get_items.php?type=images');
+          const data = await res.json();
+          renderImages(data.images);
+        } catch(e) {
+          console.error('Fetch error:', e);
+          container.textContent = 'Fehler beim Laden';
+        }
+      }
+      
+      function escapeHTML(s){
+        if (!s) return '';
+        return String(s).replace(/[&<>"']/g, function(c){
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+      }
+      
+      function renderImages(images){
+        if (!images || images.length === 0) {
+          container.innerHTML = '<p style="color:#aaa">Keine Bilder vorhanden</p>';
+          return;
+        }
+        
+        let html = '<div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:20px;margin:20px 0;align-items:start">';
+        images.forEach(img => {
+          html += `
+            <div style="border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.2);width:100%;">
+              <img src="/evangelische-kirche-drabenderhöhe/uploads/images/${escapeHTML(img.filename)}" alt="${escapeHTML(img.title)}" style="width:100%;display:block;object-fit:cover;">
+              <div style="padding:12px;background:#fafafa;color:#333;">
+                <strong>${escapeHTML(img.title)}</strong><br>
+                <small style="color:#666">${escapeHTML(img.description)}</small>
+              </div>
+            </div>
+          `;
+        });
+        html += '</div>';
+        
+        container.innerHTML = html;
+      }
+      
+      loadImages();
+    })();
+  </script>
 </body>
 </html>
